@@ -1,27 +1,21 @@
-import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        String strNum = "123";
 
-        while(true) {
-            String input = sc.nextLine();
+        try {
+            int num = convertToInt(strNum);
 
-            if(input.equals("q")) {
-                break;
-            } else {
-                System.out.println("입력값 : " + input);
+            System.out.println("변한 결과 : " + num);
 
-                try {
-                    int number = Integer.parseInt(input);
-
-                    System.out.println("숫자값 : " + number);
-                } catch (NumberFormatException e) {
-                    System.out.println("int가 아닙니다.");
-                }
-            }
+        } catch (NumberFormatException e) {
+            System.out.println("숫자 형식 오류~");
         }
-        System.out.println("종료");
-
     }
+
+    public static int convertToInt(String s) throws NumberFormatException {
+        return Integer.parseInt(s);
+    }
+
 }
