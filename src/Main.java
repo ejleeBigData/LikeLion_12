@@ -1,15 +1,19 @@
-import java.util.Arrays;
-
 public class Main {
     public static void main(String[] args) {
-        String[] color = {"빨", "주", "노", "초", "파", "남", "보", "흰"};
+        int a = 10;
+        int b = 0;
 
-        //배열의 경우 for 보다는 stream 사용
-        for(String c: color) {
-            System.out.println("color : " + c);
+        try{
+            int result = a / b;
+            System.out.println("결과 : " + result);
+        } catch (ArithmeticException e) {
+            System.out.println(e.getMessage());
+
+            System.out.println("오류 발생!");
+        } catch (NullPointerException e) {
+
+            System.out.println("비정상 접근! 초기화면으로 이동합니다.");
         }
-
-        Arrays.stream(color).forEach(n -> System.out.println(n));
 
     }
 }
