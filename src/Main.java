@@ -9,7 +9,9 @@ public class Main {
             System.out.println("color : " + c);
         }
 
-        Arrays.stream(color).forEach(n -> System.out.println(n));
+        //Arrays.stream(color).forEach(n -> System.out.println(n));
+
+        Arrays.stream(color).forEach(System.out::println);
 
     }
 }
