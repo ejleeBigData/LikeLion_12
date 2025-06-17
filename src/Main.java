@@ -1,29 +1,18 @@
 
 public class Main {
     public static void main(String[] args) {
-        String input = "111 9 88";
-        String[] tokens = input.split(" ");
+        int a = 10;
+        int b = 0;
 
         try {
-            for(String token : tokens) {
-                System.out.println(token);
-            }
+            int result =  a / b ;
 
-            boolean result = validateTokenCount(tokens);
-
-            if(result) {
-                System.out.println("숫자 " + tokens.length + "개");
-            }
-        } catch (NumberFormatException e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
-    public static boolean validateTokenCount(String[] tokens) throws NumberFormatException {
-        if (tokens.length < 2) {
-            throw new NumberFormatException("숫자가 2개이상이 아닙니다.");
+            System.out.println("result : " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("0으로 나눌수 없습니다.");
+        } finally {
+            System.out.println("항상 실행 됩니다.");
         }
 
-        return true;
     }
 }
