@@ -1,19 +1,27 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        int a = 10;
-        int b = 0;
+        Scanner sc = new Scanner(System.in);
 
-        try{
-            int result = a / b;
-            System.out.println("결과 : " + result);
-        } catch (ArithmeticException e) {
-            System.out.println(e.getMessage());
+        while(true) {
+            String input = sc.nextLine();
 
-            System.out.println("오류 발생!");
-        } catch (NullPointerException e) {
+            if(input.equals("q")) {
+                break;
+            } else {
+                System.out.println("입력값 : " + input);
 
-            System.out.println("비정상 접근! 초기화면으로 이동합니다.");
+                try {
+                    int number = Integer.parseInt(input);
+
+                    System.out.println("숫자값 : " + number);
+                } catch (NumberFormatException e) {
+                    System.out.println("int가 아닙니다.");
+                }
+            }
         }
+        System.out.println("종료");
 
     }
 }
