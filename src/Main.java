@@ -1,21 +1,29 @@
 
 public class Main {
-
     public static void main(String[] args) {
-        String strNum = "123";
+        String input = "111 2 3";
+        String[] tokens = input.split(" ");
 
         try {
-            int num = convertToInt(strNum);
+            for(String token : tokens) {
+                System.out.println(token);
+            }
 
-            System.out.println("변한 결과 : " + num);
+            boolean result = validateTokenCount(tokens);
 
+            if(result) {
+                System.out.println("숫자 " + tokens.length + "개");
+            }
         } catch (NumberFormatException e) {
-            System.out.println("숫자 형식 오류~");
+            System.out.println(e.getMessage());
         }
     }
 
-    public static int convertToInt(String s) throws NumberFormatException {
-        return Integer.parseInt(s);
-    }
+    public static boolean validateTokenCount(String[] tokens) throws NumberFormatException {
+        if (tokens.length < 2) {
+            throw new NumberFormatException("숫자 2개가 아닙니다.");
+        }
 
+        return true;
+    }
 }
