@@ -1,17 +1,17 @@
 
 public class Main {
     public static void main(String[] args) {
-        int a = 10;
-        int b = 0;
+        String input = "123k";
 
         try {
-            int result =  a / b ;
+            int number = Integer.parseInt(input);
 
-            System.out.println("result : " + result);
-        } catch (ArithmeticException e) {
-            System.out.println("0으로 나눌수 없습니다.");
+            System.out.println("숫자 변환 : " + number);
+
+        } catch (NumberFormatException e) {
+            System.out.println("숫자로 바꿀수 없습니다.");
         } finally {
-            System.out.println("항상 실행 됩니다.");
+            System.out.println("종료");
         }
 
     }
