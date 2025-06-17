@@ -1,7 +1,7 @@
 
 public class Main {
     public static void main(String[] args) {
-        String input = "111 2 3";
+        String input = "111 9 88";
         String[] tokens = input.split(" ");
 
         try {
@@ -21,7 +21,7 @@ public class Main {
 
     public static boolean validateTokenCount(String[] tokens) throws NumberFormatException {
         if (tokens.length < 2) {
-            throw new NumberFormatException("숫자 2개가 아닙니다.");
+            throw new NumberFormatException("숫자가 2개이상이 아닙니다.");
         }
 
         return true;
